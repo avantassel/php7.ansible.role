@@ -5,13 +5,13 @@
 #  Blog: http://note.drx.tw
 #  Filename: use-yum.yml
 #  Modified: 2016-03-23 16:27
-#  Description: 
-#  Reference: 
+#  Description:
+#  Reference:
 #
 #   * How To Upgrade to PHP 7 on CentOS 7 | DigitalOcean
 #    - https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-php-7-on-centos-7
 #
-# =========================================================== 
+# ===========================================================
 
 ---
 
@@ -52,9 +52,9 @@
   yum: pkg={{ item }} enablerepo=ius state=present
   with_items:
     - php70u-common
-    - php70u-mysqlnd
     - php70u-opcache
     - php70u-pdo
+    - php70u-pear
+    - php70u-json
   #when: php_packages is defined
   notify: restart php7-fpm on centos
-

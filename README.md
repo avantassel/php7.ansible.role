@@ -1,8 +1,8 @@
 # Ansible Role: PHP7
 
-[![Build Status](https://travis-ci.org/chusiang/php7.ansible.role.svg?branch=master)](https://travis-ci.org/chusiang/php7.ansible.role)
+[![Build Status](https://travis-ci.org/avantassel/php7.ansible.role.svg?branch=master)](https://travis-ci.org/avantassel/php7.ansible.role)
 
-An Ansible role of Deploy PHP 7 (php-fpm) for nginx on CentOS, Debian, and Ubuntu. (forked from [https://galaxy.ansible.com/itcraftsmanpl/php7/](https://galaxy.ansible.com/itcraftsmanpl/php7/))
+An Ansible role of Deploy PHP 7 (php-fpm) for nginx on CentOS, Debian, and Ubuntu. (forked from [https://galaxy.ansible.com/chusiang/php7/](https://galaxy.ansible.com/chusiang/php7/))
 
 * Current PHP7 version: **7.0.4**
 
@@ -23,7 +23,8 @@ Available variables are listed below, along with default values (see `defaults/m
       - php7.0-curl
       - php7.0-cgi
       - php7.0-fpm
-      - php7.0-mysql
+      - php7.0-pear
+      - php7.0-json
       - php7.0-gd
 
     php_timezone: Asia/Taipei
@@ -35,15 +36,15 @@ Available variables are listed below, along with default values (see `defaults/m
 
 ### Note
 
-1. If you see some error message, maybe you need modify `php_owner` and `php_group` from **nginx** to **www-data**. 
+1. If you see some error message, maybe you need modify `php_owner` and `php_group` from **nginx** to **www-data**.
 
  * Browser:
- 
+
      > `An error occurred.`
 
  * error.log:
 
-     > `connect() to unix:/var/run/php/php7.0-fpm.sock failed (13: Permission denied) while connecting to upstream ...` 
+     > `connect() to unix:/var/run/php/php7.0-fpm.sock failed (13: Permission denied) while connecting to upstream ...`
 
 2. The `/target/path/` of **socket**, configure files is difference on Ubuntu and CentOS. **Be careful your Nginx setting !**
 
